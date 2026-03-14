@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web-scrcpy:
+    image: baixin1228/web-scrcpy:latest
+    container_name: web-scrcpy
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data:/app/data
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    privileged: true
+    network_mode: bridge
