@@ -16,7 +16,7 @@ RUN apk add --no-cache \
 WORKDIR /app
 
 # 复制package.json和package-lock.json
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 # 安装Node.js依赖
 RUN npm install
